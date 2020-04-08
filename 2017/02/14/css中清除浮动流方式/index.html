@@ -3,20 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>iOS中UITextField输入字数限制 | JuneAme的博客</title>
+  <title>css中清除浮动流方式 | JuneAme的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="前端,JuneAme,javascript" />
   
-  <meta name="description" content="iOS开发中对UITextField实现输入字数限制">
+  <meta name="description" content="总结下css中清除浮动流方式">
 <meta property="og:type" content="article">
-<meta property="og:title" content="iOS中UITextField输入字数限制">
-<meta property="og:url" content="https://ccdeccdecc.github.io/2016/01/14/iOS%E4%B8%ADUITextField%E8%BE%93%E5%85%A5%E5%AD%97%E6%95%B0%E9%99%90%E5%88%B6/index.html">
+<meta property="og:title" content="css中清除浮动流方式">
+<meta property="og:url" content="https://ccdeccdecc.github.io/2017/02/14/css%E4%B8%AD%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8%E6%B5%81%E6%96%B9%E5%BC%8F/index.html">
 <meta property="og:site_name" content="JuneAme的博客">
-<meta property="og:description" content="iOS开发中对UITextField实现输入字数限制">
+<meta property="og:description" content="总结下css中清除浮动流方式">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2016-01-13T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-04-08T13:24:39.411Z">
+<meta property="article:published_time" content="2017-02-13T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-04-08T13:56:38.784Z">
 <meta property="article:author" content="JuneAme">
 <meta property="article:tag" content="前端">
 <meta property="article:tag" content="JuneAme">
@@ -94,20 +94,20 @@
     </div>
 </header>
       <div class="outer">
-        <section id="main" class="body-wrap"><article id="post-iOS中UITextField输入字数限制" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main" class="body-wrap"><article id="post-css中清除浮动流方式" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="post-title" itemprop="name">
-      iOS中UITextField输入字数限制
+      css中清除浮动流方式
     </h1>
     <div class="post-title-bar">
       <ul>
           
         <li>
-          <i class="fa fa-calendar"></i>  2016-01-14
+          <i class="fa fa-calendar"></i>  2017-02-14
         </li>
         <li>
           <i class="fa fa-eye"></i>
@@ -123,34 +123,61 @@
     <div class="article-entry post-content" itemprop="articleBody">
       
             
-            <h3 id="iOS开发中对UITextField实现输入字数限制"><a href="#iOS开发中对UITextField实现输入字数限制" class="headerlink" title="iOS开发中对UITextField实现输入字数限制"></a>iOS开发中对UITextField实现输入字数限制</h3><pre><code>{
+            <h3 id="1-清除浮动的第一种方式"><a href="#1-清除浮动的第一种方式" class="headerlink" title="1.清除浮动的第一种方式"></a>1.清除浮动的第一种方式</h3><p>给前面一个父元素设置高度</p>
+<p><strong>注意点:</strong>在实际开发中, 我们能不写高度就不写高度, 所以这种方式用得很少</p>
+<h3 id="2-清除浮动的第二种方式"><a href="#2-清除浮动的第二种方式" class="headerlink" title="2.清除浮动的第二种方式"></a>2.清除浮动的第二种方式</h3><p>给后面的盒子添加clear属性</p>
+<p><strong>CSS clear属性</strong></p>
+<p>取值：<strong>left</strong>   告诉浏览器不要去找前面的左浮动元素</p>
+<p><strong>right</strong>    告诉浏览器不要去找前面的右浮动元素</p>
+<p><strong>both</strong>    不要去找前面的左浮动和有浮动元素</p>
+<p><strong>none</strong>    默认取值，按照浮动元素的排序规则来排序</p>
+<blockquote>
+<p><strong>注意：</strong>使用这种清除浮动方式会使margin属性会失效</p>
+</blockquote>
+<h3 id="3-清除浮动的第三种方式"><a href="#3-清除浮动的第三种方式" class="headerlink" title="3.清除浮动的第三种方式"></a>3.清除浮动的第三种方式</h3><p><strong>隔墙法：</strong>（在实际开发中不常用）</p>
+<p>1)、外墙法：在2个盒子之间添加一个额外的块级元素，给这个额外的块级元素添加clear: both;属性</p>
+<blockquote>
+<p><strong>注意点：</strong>外墙法它可以让第二个和i子使用margin-top属性</p>
+</blockquote>
+<p>外墙法不可以让第一个盒子使用margin-bottom属性</p>
+<p>这个额外的盒子可以设置多个类名 第一个类名可以设置clear属性 第二个类名可以设置高度</p>
+<p>2)、内墙法：在第一个盒子中所有子元素最后添加一个额外的块级元素</p>
+<p>给这个额外添加的块级元素设置clear: both;属性</p>
+<p>注意点:内墙法它可以让第二个盒子使用margin-top属性</p>
+<p>内墙法它可以让第一个盒子使用margin-bottom属性</p>
+<blockquote>
+<p><strong>外墙法和内墙法区别?</strong></p>
+</blockquote>
+<blockquote>
+<p>外墙法不能撑起第一个盒子的高度, 而内墙法可以撑起第一个盒子的高度</p>
+</blockquote>
+<h3 id="4-清除浮动的第四种方式"><a href="#4-清除浮动的第四种方式" class="headerlink" title="4.清除浮动的第四种方式"></a>4.清除浮动的第四种方式</h3><p>使用伪元素选择器的方式可以清除浮动</p>
+<p>本质上就是内墙法, 只不过是直接通过CSS代码添加了内墙, 其它特性和内墙法都一样</p>
+<blockquote>
+<p><strong>注意点</strong>:IE6中不支持这种方式, 为了兼容IE6必须给前面的盒子添加*zoom:1;属性</p>
+</blockquote>
+<pre><code>.box1::after{
+  /* 设置添加的子元素的内容为空*/
+  content:&quot;&quot;;
+  /* 设置添加的子元素的为块级元素*/
+  display:block;
+  /* 设置添加的子元素的高度为0*/
+  heigth:0;
+  /* 设置添加的子元素看不见*/
+  visibility:hidden;
+  /* 给添加的子元素设置clear:both;*/
+  lear:both;
+}</code></pre><h3 id="5-清除浮动的第五种方式"><a href="#5-清除浮动的第五种方式" class="headerlink" title="5.清除浮动的第五种方式"></a>5.清除浮动的第五种方式</h3><p><strong>overflow:hidden；</strong><br>作用：1.可以将超出标签范围的内容裁剪掉   </p>
+<p>2.可以清除浮动</p>
+<p>3.如果两个盒子是嵌套关系，那么设置了里面一个盒子顶部的外边距，外面一个盒子也会被顶下来，如果外面的盒子不想被一起顶下来，那么可以通过overflow:hidden；让里面的盒子设置margin-top之后, 外面的盒子不被顶下来</p>
+<blockquote>
+<p><strong>注意点</strong>:IE6中不支持这种方式, 为了兼容IE6必须给前面的盒子添加*zoom:1;属性</p>
+</blockquote>
 
-    UITextField *myField;
-
-}
-
-CMaxLength = 30;//最大字数
-
-[self.myField addTarget:self action:@selector(textFieldDidChanged:) forControlEvents:UIControlEventEditingChanged];
-
-
--(void)textFieldDidChanged:(UITextField *)sender{
-
-    NSString *tempString = sender.text;
-
-    if (sender.markedTextRange == nil &amp;&amp; tempString.length &gt; CMaxLength) {
-
-        sender.text = [tempString substringToIndex:kMaxLength];
-
-        [sender.undoManager removeAllActions];
-
-    }
-
-}</code></pre>
             <!-- <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2020年04月08日 21:24</p>
-        <p>原始链接： <a class="post-url" href="/2016/01/14/iOS%E4%B8%ADUITextField%E8%BE%93%E5%85%A5%E5%AD%97%E6%95%B0%E9%99%90%E5%88%B6/" title="iOS中UITextField输入字数限制">https://ccdeccdecc.github.io/2016/01/14/iOS%E4%B8%ADUITextField%E8%BE%93%E5%85%A5%E5%AD%97%E6%95%B0%E9%99%90%E5%88%B6/</a></p>
+        <p>最后更新： 2020年04月08日 21:56</p>
+        <p>原始链接： <a class="post-url" href="/2017/02/14/css%E4%B8%AD%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8%E6%B5%81%E6%96%B9%E5%BC%8F/" title="css中清除浮动流方式">https://ccdeccdecc.github.io/2017/02/14/css%E4%B8%AD%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8%E6%B5%81%E6%96%B9%E5%BC%8F/</a></p>
         <footer>
             <a href="https://ccdeccdecc.github.io">
                 <img src="/images/logo.png" alt="JuneAme">
@@ -176,7 +203,7 @@ CMaxLength = 30;//最大字数
     <div class="post-share-list" id="share-list">
         <ul class="share-icons">
           <li>
-            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://ccdeccdecc.github.io/2016/01/14/iOS%E4%B8%ADUITextField%E8%BE%93%E5%85%A5%E5%AD%97%E6%95%B0%E9%99%90%E5%88%B6/&title=《iOS中UITextField输入字数限制》 — JuneAme的博客&pic=/images/icon1.jpg" data-title="微博">
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://ccdeccdecc.github.io/2017/02/14/css%E4%B8%AD%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8%E6%B5%81%E6%96%B9%E5%BC%8F/&title=《css中清除浮动流方式》 — JuneAme的博客&pic=/images/icon1.jpg" data-title="微博">
               <i class="fa fa-weibo"></i>
             </a>
           </li>
@@ -186,22 +213,22 @@ CMaxLength = 30;//最大字数
             </a>
           </li>
           <li>
-            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ccdeccdecc.github.io/2016/01/14/iOS%E4%B8%ADUITextField%E8%BE%93%E5%85%A5%E5%AD%97%E6%95%B0%E9%99%90%E5%88%B6/&title=《iOS中UITextField输入字数限制》 — JuneAme的博客&source=专注 WEB 开发的技术博客" data-title="QQ">
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ccdeccdecc.github.io/2017/02/14/css%E4%B8%AD%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8%E6%B5%81%E6%96%B9%E5%BC%8F/&title=《css中清除浮动流方式》 — JuneAme的博客&source=专注 WEB 开发的技术博客" data-title="QQ">
               <i class="fa fa-qq"></i>
             </a>
           </li>
           <li>
-            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://ccdeccdecc.github.io/2016/01/14/iOS%E4%B8%ADUITextField%E8%BE%93%E5%85%A5%E5%AD%97%E6%95%B0%E9%99%90%E5%88%B6/" data-title="Facebook">
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://ccdeccdecc.github.io/2017/02/14/css%E4%B8%AD%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8%E6%B5%81%E6%96%B9%E5%BC%8F/" data-title="Facebook">
               <i class="fa fa-facebook"></i>
             </a>
           </li>
           <li>
-            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《iOS中UITextField输入字数限制》 — JuneAme的博客&url=https://ccdeccdecc.github.io/2016/01/14/iOS%E4%B8%ADUITextField%E8%BE%93%E5%85%A5%E5%AD%97%E6%95%B0%E9%99%90%E5%88%B6/&via=https://ccdeccdecc.github.io" data-title="Twitter">
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《css中清除浮动流方式》 — JuneAme的博客&url=https://ccdeccdecc.github.io/2017/02/14/css%E4%B8%AD%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8%E6%B5%81%E6%96%B9%E5%BC%8F/&via=https://ccdeccdecc.github.io" data-title="Twitter">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
           <li>
-            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://ccdeccdecc.github.io/2016/01/14/iOS%E4%B8%ADUITextField%E8%BE%93%E5%85%A5%E5%AD%97%E6%95%B0%E9%99%90%E5%88%B6/" data-title="Google+">
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://ccdeccdecc.github.io/2017/02/14/css%E4%B8%AD%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8%E6%B5%81%E6%96%B9%E5%BC%8F/" data-title="Google+">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -211,7 +238,7 @@ CMaxLength = 30;//最大字数
 <div class="post-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;" id="wxShare-close">×</a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://ccdeccdecc.github.io/2016/01/14/iOS%E4%B8%ADUITextField%E8%BE%93%E5%85%A5%E5%AD%97%E6%95%B0%E9%99%90%E5%88%B6/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://ccdeccdecc.github.io/2017/02/14/css%E4%B8%AD%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8%E6%B5%81%E6%96%B9%E5%BC%8F/" alt="微信分享二维码">
 </div>
 
 <div class="mask"></div>
@@ -229,23 +256,28 @@ CMaxLength = 30;//最大字数
 
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#iOS开发中对UITextField实现输入字数限制"><span class="post-toc-text">iOS开发中对UITextField实现输入字数限制</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-清除浮动的第一种方式"><span class="post-toc-text">1.清除浮动的第一种方式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-清除浮动的第二种方式"><span class="post-toc-text">2.清除浮动的第二种方式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-清除浮动的第三种方式"><span class="post-toc-text">3.清除浮动的第三种方式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-清除浮动的第四种方式"><span class="post-toc-text">4.清除浮动的第四种方式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-清除浮动的第五种方式"><span class="post-toc-text">5.清除浮动的第五种方式</span></a></li></ol>
         </nav>
     </aside>
     
 
 <nav id="article-nav">
   
-    <a href="/2016/03/14/css%E5%B0%8F%E7%9F%A5%E8%AF%86/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/05/26/jquery%E6%8F%92%E4%BB%B6%E7%9A%84%E5%88%B6%E4%BD%9C%E6%96%B9%E6%B3%95/" id="article-nav-newer" class="article-nav-link-wrap">
 
       <span class="article-nav-title">
         <i class="fa fa-hand-o-left" aria-hidden="true"></i>
         
-          css小知识
+          jquery插件的制作方法
         
       </span>
     </a>
   
+  
+    <a href="/2016/11/15/%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80%E4%B9%8B%E5%B8%83%E5%B1%80%E6%8A%80%E5%B7%A7/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">网页布局之布局技巧</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
   
 </nav>
 

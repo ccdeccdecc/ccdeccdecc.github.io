@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>AngularJs小总结 | JuneAme的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="前端,JuneAme,javascript" />
+  
+  <meta name="description" content="这一篇主要AngularJs的使用小总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AngularJs小总结">
+<meta property="og:url" content="https://ccdeccdecc.github.io/2018/03/21/Angular%E5%B0%8F%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="JuneAme的博客">
+<meta property="og:description" content="这一篇主要AngularJs的使用小总结">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-03-20T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-04-08T14:52:24.755Z">
+<meta property="article:author" content="JuneAme">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="JuneAme">
+<meta property="article:tag" content="javascript">
+<meta name="twitter:card" content="summary">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<script src="/js/pace.min.js"></script>
+
+  
+
+  
+  
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">JuneAme的博客</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>主页</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        JuneAme的博客
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        一个专注 WEB 开发的技术博客
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-Angular小总结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      AngularJs小总结
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2018-03-21
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h3 id="写在文章前的小记"><a href="#写在文章前的小记" class="headerlink" title="写在文章前的小记"></a>写在文章前的小记</h3><p>angular中有很多知识点需要学习,学习成本是很大的,我通过平常开发中把一些</p>
+<p>很重要知识点总结下来,不管是以后拿来用,或者跳槽面试需要,我都感觉是很有帮助的!</p>
+<h3 id="AngularJs的优点"><a href="#AngularJs的优点" class="headerlink" title="AngularJs的优点"></a>AngularJs的优点</h3><ol>
+<li><p>模板功能强大丰富，并且是声明式的，自带了丰富的Angular指令；</p>
+</li>
+<li><p>是一个比较完善的前端MVVM框架，包含模板，数据双向绑定，路由，模块化，服务，过滤器，依赖注入等所有功能；</p>
+</li>
+<li><p>自定义Directive，比jQuery插件还灵活，但是需要深入了解Directive的一些特性，简单的封装容易，复杂一点官方没有提供详细的介绍文档，我们可以通过阅读源代码来找到某些我们需要的东西，如：在directive使用 $parse；</p>
+</li>
+<li><p>ng模块化比较大胆的引入了Java的一些东西（依赖注入），能够很容易的写出可复用的代码，对于敏捷开发的团队来说非常有帮助，我们的项目从上线到目前，UI变化很大，在摸索中迭代产品，但是js的代码基本上很少改动。</p>
+</li>
+<li><p>补充：Angular支持单元测试和e2e-testing。</p>
+</li>
+</ol>
+<blockquote>
+<p>注：最好的一点就是angularjs的双向绑定以及他的模板层使用。</p>
+</blockquote>
+<p>参考：<a href="https://blog.csdn.net/qq_23334071/java/article/details/80504366" target="_blank" rel="noopener">https://blog.csdn.net/qq_23334071/java/article/details/80504366</a></p>
+<h3 id="AngularJs的缺点"><a href="#AngularJs的缺点" class="headerlink" title="AngularJs的缺点"></a>AngularJs的缺点</h3><blockquote>
+<p>本身它是比较笨重的,源码就有3w多行,并且替我封装了很多的方法,所以它的性能是比较差的.<br>所以我们在用的时候,就要尽最多程度保证性能了.</p>
+<p>不要过多在$Scope.$watch方法,因为这个方法会一直执行,如果我们不去手动关闭,<br>这个方法会一直监听绑定的属性,所以是非常耗性能的.</p>
+<p>减少不必要的数据展示,因为进行视图的展示,会触发脏值检测,如果一些不必要的数据展示到视图<br>中,就会耗性能了</p>
+</blockquote>
+<h3 id="ng-if-ng-show-ng-hide-区别"><a href="#ng-if-ng-show-ng-hide-区别" class="headerlink" title="ng-if ,ng-show ,ng-hide 区别"></a>ng-if ,ng-show ,ng-hide 区别</h3><blockquote>
+<p>这三者虽然很类似,但是还是不同</p>
+<p>首先是共同点:它们三者都可以起到隐藏显示元素的作用</p>
+<p>不同点:ng-if的隐藏是把dom元素直接删除,而show和hide只是类似使用display:none的方法</p>
+<p>第二个不同点使用场景不一样,ng-if一般用在单次显示隐藏的时候,比如页面一上来就出现的广告<br>信息,关闭之后就不会在显示,而show hide一般是配套使用用来控制一些元素显示隐藏,<br>多次使用,比如头部的返回和底部的tabbar,它们是相反的,通过show和hide方法就能用<br>一个变量控制它们的显示和隐藏</p>
+</blockquote>
+<h3 id="ng-repeat迭代数据出现数据相同处理"><a href="#ng-repeat迭代数据出现数据相同处理" class="headerlink" title="ng-repeat迭代数据出现数据相同处理"></a>ng-repeat迭代数据出现数据相同处理</h3><blockquote>
+<p>平常使用ng-repeat时候,遍历数据可能会出现数据相同情况,这时候就会报错,如何解决这个<br>问题呢?</p>
+<p>其实很简单,只需要在后面加上 track-by=’索引’ 里面传入一个不同的值,就能解决<br>数据一样的情况了</p>
+</blockquote>
+<h3 id="ng-事件绑定-能否使用原生js对象方法"><a href="#ng-事件绑定-能否使用原生js对象方法" class="headerlink" title="ng-事件绑定,能否使用原生js对象方法"></a>ng-事件绑定,能否使用原生js对象方法</h3><blockquote>
+<p>我们在事件绑定时候,是不允许使用原生js对象的方法的,因为angualr不允许我们这样做,如何<br>使用这些方法,angular为我们封装了属于自己的对象,在原生对象的前面加一个$</p>
+<p>例如$window,$timeout.$interval 都是angular为我们封装,我们需要使用的使用,在依赖注入服务的时候<br>把这些服务也一同注入进来,就能使用这样对象,它们的实现的功能和原生js对象是一样的,只不过用法<br>稍微不同而尔!</p>
+</blockquote>
+<h3 id="factory、service-和-provider-区别"><a href="#factory、service-和-provider-区别" class="headerlink" title="factory、service 和 provider 区别"></a>factory、service 和 provider 区别</h3><blockquote>
+<p>在平常的开发中,需要用到很多自定义服务,而它们三者之间的共同点就是用来自定义服务的,它们的本质都是创建对象返回一个方法.<br>而它们之间的不同就在于定义的方式不一样</p>
+<p>factory自定义服务:我们需要在内部返回一个一个对象,先通过function getData() 定义函数<br>然后通过返回一个对象 return {getDate:getData}的方式,我们需要使用的时候通过服务名称<br>.对象的key </p>
+<p>例如上面的例子,服务名称.getDate()就能调用服务的方法了</p>
+</blockquote>
+<p>service服务:我们通过this来创建函数</p>
+<blockquote>
+<p>例如,this.getData=function() 然后通过服务名称.<br>getData() 就能调用服务里面的方法了</p>
+</blockquote>
+<p>provider服务:我们需要通过this调用 $get方法 this.$get({return｛｝})　方法里面返回一个<br>对象，然后对象接收一个方法，我们通过服务名称.对象名称就能调用服务的方法了</p>
+<blockquote>
+</blockquote>
+<p>内置服务都会提供一个provider来进行配置,通过配置文件config方法,然后注入对应服务的名称<br>例如 //开启和禁用 调用config方法</p>
+<pre><code>app.config([&apos;$logProvider&apos;,function ($logProvider) {
+      $logProvider.debugEnabled(false);
+}])</code></pre><h3 id="angularjs当中数据绑定的机制和原理-digest-apply"><a href="#angularjs当中数据绑定的机制和原理-digest-apply" class="headerlink" title="angularjs当中数据绑定的机制和原理 $digest $apply"></a>angularjs当中数据绑定的机制和原理 $digest $apply</h3><blockquote>
+<p>angular中是通过脏值检测的方式来进行数据展示到视图的<br>每次在视图中绑定数据的时候,都会把这个数据添加到一个$watchlist数组当中,里面的属性会被<br>$watch监听,只要有事件的方式,就会触发$degist事件,它第一次会遍历$watchlist数组,<br>询问每一个属性是否有更改,然后回再次遍历一次$scope上面的属性,是否有更新,如果有,会再次遍历<br>数组,如果没有就会触发$apply方法,把数据展示到视图中</p>
+</blockquote>
+<h3 id="定时器的取消和-watch的停止"><a href="#定时器的取消和-watch的停止" class="headerlink" title="定时器的取消和$watch的停止"></a>定时器的取消和$watch的停止</h3><blockquote>
+<p>当我们项目需要用到定时器时候,我们肯定需要关闭定时,原生js通过clearInterval来关闭<br>而angular中通过 $interval.cancel(timer)来关闭 先用一个变量接收var timer=$interval();<br>$watch方法调用的时候会返回一个函数,如果我们想要停止某个监听,在定义时候接收一下<br>var stopWatch = $scope.$watch(‘监听的值’,回调)  ,再次调用该方法即可关闭监听<br>stopWatch();</p>
+</blockquote>
+<h3 id="angualr中指令以及里面的常用方法"><a href="#angualr中指令以及里面的常用方法" class="headerlink" title="angualr中指令以及里面的常用方法"></a>angualr中指令以及里面的常用方法</h3><blockquote>
+<p>自定义指令是可以以哪种方式进行展示的,通过 restrict 来定义<br>里面具体的值为 </p>
+</blockquote>
+<pre><code>E==&gt;元素   &lt;nav&gt;&lt;/nav&gt;
+A==&gt;属性   &lt;div nav&gt;&lt;/div&gt;
+C==&gt;类        &lt;div class=&apos;nav&apos;&gt;&lt;/div&gt;
+M==&gt;注释   不建议使用</code></pre><p>-</p>
+<blockquote>
+<p>template:模板,可以直接写html结构 并且里面的标签必须有一个父级包着,要不会报错.</p>
+<p>templateUrl:模板地址 写一个路径</p>
+<p>replace:true  设置为true会替换原来的标签</p>
+<p>transculde:true  该方法之适用外链模板 会保留标签里面的元素  在需要保留的元素添加</p>
+</blockquote>
+<pre><code>&lt;div transculde&gt;&lt;/div&gt;</code></pre><blockquote>
+<p>link:里面接收三个参数,分别是scope,ele,attr,<br>它们分别是scope服务,ele为模板的元素,它会默认转换成jQ对象,attr为元素身上的属性</p>
+</blockquote>
+<p>-</p>
+<blockquote>
+</blockquote>
+<p>scope修饰符:<br>  里面有三个选项 该方法作用用于外界传值使用</p>
+<blockquote>
+</blockquote>
+<p>  第一种：自定义名称:‘@’ 通过&lt;xmg content=”<h3 id="写在文章前的小记"><a href="#写在文章前的小记" class="headerlink" title="写在文章前的小记"></a>写在文章前的小记</h3><p>angular中有很多知识点需要学习,学习成本是很大的,我通过平常开发中把一些</p>
+<p>很重要知识点总结下来,不管是以后拿来用,或者跳槽面试需要,我都感觉是很有帮助的!</p>
+<h3 id="AngularJs的优点"><a href="#AngularJs的优点" class="headerlink" title="AngularJs的优点"></a>AngularJs的优点</h3><ol>
+<li><p>模板功能强大丰富，并且是声明式的，自带了丰富的Angular指令；</p>
+</li>
+<li><p>是一个比较完善的前端MVVM框架，包含模板，数据双向绑定，路由，模块化，服务，过滤器，依赖注入等所有功能；</p>
+</li>
+<li><p>自定义Directive，比jQuery插件还灵活，但是需要深入了解Directive的一些特性，简单的封装容易，复杂一点官方没有提供详细的介绍文档，我们可以通过阅读源代码来找到某些我们需要的东西，如：在directive使用 $parse；</p>
+</li>
+<li><p>ng模块化比较大胆的引入了Java的一些东西（依赖注入），能够很容易的写出可复用的代码，对于敏捷开发的团队来说非常有帮助，我们的项目从上线到目前，UI变化很大，在摸索中迭代产品，但是js的代码基本上很少改动。</p>
+</li>
+<li><p>补充：Angular支持单元测试和e2e-testing。</p>
+</li>
+</ol>
+<blockquote>
+<p>注：最好的一点就是angularjs的双向绑定以及他的模板层使用。</p>
+</blockquote>
+<p>参考：<a href="https://blog.csdn.net/qq_23334071/java/article/details/80504366" target="_blank" rel="noopener">https://blog.csdn.net/qq_23334071/java/article/details/80504366</a></p>
+<h3 id="AngularJs的缺点"><a href="#AngularJs的缺点" class="headerlink" title="AngularJs的缺点"></a>AngularJs的缺点</h3><blockquote>
+<p>本身它是比较笨重的,源码就有3w多行,并且替我封装了很多的方法,所以它的性能是比较差的.<br>所以我们在用的时候,就要尽最多程度保证性能了.</p>
+<p>不要过多在$Scope.$watch方法,因为这个方法会一直执行,如果我们不去手动关闭,<br>这个方法会一直监听绑定的属性,所以是非常耗性能的.</p>
+<p>减少不必要的数据展示,因为进行视图的展示,会触发脏值检测,如果一些不必要的数据展示到视图<br>中,就会耗性能了</p>
+</blockquote>
+<h3 id="ng-if-ng-show-ng-hide-区别"><a href="#ng-if-ng-show-ng-hide-区别" class="headerlink" title="ng-if ,ng-show ,ng-hide 区别"></a>ng-if ,ng-show ,ng-hide 区别</h3><blockquote>
+<p>这三者虽然很类似,但是还是不同</p>
+<p>首先是共同点:它们三者都可以起到隐藏显示元素的作用</p>
+<p>不同点:ng-if的隐藏是把dom元素直接删除,而show和hide只是类似使用display:none的方法</p>
+<p>第二个不同点使用场景不一样,ng-if一般用在单次显示隐藏的时候,比如页面一上来就出现的广告<br>信息,关闭之后就不会在显示,而show hide一般是配套使用用来控制一些元素显示隐藏,<br>多次使用,比如头部的返回和底部的tabbar,它们是相反的,通过show和hide方法就能用<br>一个变量控制它们的显示和隐藏</p>
+</blockquote>
+<h3 id="ng-repeat迭代数据出现数据相同处理"><a href="#ng-repeat迭代数据出现数据相同处理" class="headerlink" title="ng-repeat迭代数据出现数据相同处理"></a>ng-repeat迭代数据出现数据相同处理</h3><blockquote>
+<p>平常使用ng-repeat时候,遍历数据可能会出现数据相同情况,这时候就会报错,如何解决这个<br>问题呢?</p>
+<p>其实很简单,只需要在后面加上 track-by=’索引’ 里面传入一个不同的值,就能解决<br>数据一样的情况了</p>
+</blockquote>
+<h3 id="ng-事件绑定-能否使用原生js对象方法"><a href="#ng-事件绑定-能否使用原生js对象方法" class="headerlink" title="ng-事件绑定,能否使用原生js对象方法"></a>ng-事件绑定,能否使用原生js对象方法</h3><blockquote>
+<p>我们在事件绑定时候,是不允许使用原生js对象的方法的,因为angualr不允许我们这样做,如何<br>使用这些方法,angular为我们封装了属于自己的对象,在原生对象的前面加一个$</p>
+<p>例如$window,$timeout.$interval 都是angular为我们封装,我们需要使用的使用,在依赖注入服务的时候<br>把这些服务也一同注入进来,就能使用这样对象,它们的实现的功能和原生js对象是一样的,只不过用法<br>稍微不同而尔!</p>
+</blockquote>
+<h3 id="factory、service-和-provider-区别"><a href="#factory、service-和-provider-区别" class="headerlink" title="factory、service 和 provider 区别"></a>factory、service 和 provider 区别</h3><blockquote>
+<p>在平常的开发中,需要用到很多自定义服务,而它们三者之间的共同点就是用来自定义服务的,它们的本质都是创建对象返回一个方法.<br>而它们之间的不同就在于定义的方式不一样</p>
+<p>factory自定义服务:我们需要在内部返回一个一个对象,先通过function getData() 定义函数<br>然后通过返回一个对象 return {getDate:getData}的方式,我们需要使用的时候通过服务名称<br>.对象的key </p>
+<p>例如上面的例子,服务名称.getDate()就能调用服务的方法了</p>
+</blockquote>
+<p>service服务:我们通过this来创建函数</p>
+<blockquote>
+<p>例如,this.getData=function() 然后通过服务名称.<br>getData() 就能调用服务里面的方法了</p>
+</blockquote>
+<p>provider服务:我们需要通过this调用 $get方法 this.$get({return｛｝})　方法里面返回一个<br>对象，然后对象接收一个方法，我们通过服务名称.对象名称就能调用服务的方法了</p>
+<blockquote>
+</blockquote>
+<p>内置服务都会提供一个provider来进行配置,通过配置文件config方法,然后注入对应服务的名称<br>例如 //开启和禁用 调用config方法</p>
+<pre><code>app.config([&apos;$logProvider&apos;,function ($logProvider) {
+      $logProvider.debugEnabled(false);
+}])</code></pre><h3 id="angularjs当中数据绑定的机制和原理-digest-apply"><a href="#angularjs当中数据绑定的机制和原理-digest-apply" class="headerlink" title="angularjs当中数据绑定的机制和原理 $digest $apply"></a>angularjs当中数据绑定的机制和原理 $digest $apply</h3><blockquote>
+<p>angular中是通过脏值检测的方式来进行数据展示到视图的<br>每次在视图中绑定数据的时候,都会把这个数据添加到一个$watchlist数组当中,里面的属性会被<br>$watch监听,只要有事件的方式,就会触发$degist事件,它第一次会遍历$watchlist数组,<br>询问每一个属性是否有更改,然后回再次遍历一次$scope上面的属性,是否有更新,如果有,会再次遍历<br>数组,如果没有就会触发$apply方法,把数据展示到视图中</p>
+</blockquote>
+<h3 id="定时器的取消和-watch的停止"><a href="#定时器的取消和-watch的停止" class="headerlink" title="定时器的取消和$watch的停止"></a>定时器的取消和$watch的停止</h3><blockquote>
+<p>当我们项目需要用到定时器时候,我们肯定需要关闭定时,原生js通过clearInterval来关闭<br>而angular中通过 $interval.cancel(timer)来关闭 先用一个变量接收var timer=$interval();<br>$watch方法调用的时候会返回一个函数,如果我们想要停止某个监听,在定义时候接收一下<br>var stopWatch = $scope.$watch(‘监听的值’,回调)  ,再次调用该方法即可关闭监听<br>stopWatch();</p>
+</blockquote>
+<h3 id="angualr中指令以及里面的常用方法"><a href="#angualr中指令以及里面的常用方法" class="headerlink" title="angualr中指令以及里面的常用方法"></a>angualr中指令以及里面的常用方法</h3><blockquote>
+<p>自定义指令是可以以哪种方式进行展示的,通过 restrict 来定义<br>里面具体的值为 </p>
+</blockquote>
+<pre><code>E==&gt;元素   &lt;nav&gt;&lt;/nav&gt;
+A==&gt;属性   &lt;div nav&gt;&lt;/div&gt;
+C==&gt;类        &lt;div class=&apos;nav&apos;&gt;&lt;/div&gt;
+M==&gt;注释   不建议使用</code></pre><p>-</p>
+<blockquote>
+<p>template:模板,可以直接写html结构 并且里面的标签必须有一个父级包着,要不会报错.</p>
+<p>templateUrl:模板地址 写一个路径</p>
+<p>replace:true  设置为true会替换原来的标签</p>
+<p>transculde:true  该方法之适用外链模板 会保留标签里面的元素  在需要保留的元素添加</p>
+</blockquote>
+<pre><code>&lt;div transculde&gt;&lt;/div&gt;</code></pre><blockquote>
+<p>link:里面接收三个参数,分别是scope,ele,attr,<br>它们分别是scope服务,ele为模板的元素,它会默认转换成jQ对象,attr为元素身上的属性</p>
+</blockquote>
+<p>-</p>
+<blockquote>
+</blockquote>
+<p>scope修饰符:<br>  里面有三个选项 该方法作用用于外界传值使用</p>
+<blockquote>
+</blockquote>
+<p>  第一种：自定义名称:‘@’ 通过&lt;xmg content=”{{content}}“”&gt;</xmg><br>   的插值语法获取值,该修饰符特点:外界数据修改,内部数据会一起修改,内部修改外部不修改,<br>   并且如果指令本身具有该属性,外界同名的属性会覆盖</p>
+<blockquote>
+<p>第二种:自定义名称:’=’ <xmg content="content"></xmg> 通过这中语法获取值<br>  该修饰符特点:外界数据和内部数据会互相更改,并且内部同名的属性会被外部同名的属性覆盖</p>
+<p>第三种 自定义名称:’&amp;’  <xmg content="content()"></xmg> 外界传入的是一个函数</p>
+</blockquote>
+<h3 id="angularjs常用的路由和它们之间的区别"><a href="#angularjs常用的路由和它们之间的区别" class="headerlink" title="angularjs常用的路由和它们之间的区别"></a>angularjs常用的路由和它们之间的区别</h3><blockquote>
+<p>angularjs当中常用路由是原生ngRoute 和 ui.router<br>并且ui.router是依赖angualr的</p>
+</blockquote>
+<p>它们的共同点都是用来进行设置单页面(spa)<br>不同的是,原生angular的路由只支持单视图展示,也就是说视图与视图不能嵌套,用法上受到很大的限制.</p>
+<blockquote>
+</blockquote>
+<p>而ui.router方法弥补了原生路由的不足,它不仅可以设置多视图的展示,还可以设置子路由的概念,<br>就是同一个页面存在多个路由</p>
+<h3 id="angularjs依赖注入的原理"><a href="#angularjs依赖注入的原理" class="headerlink" title="angularjs依赖注入的原理"></a>angularjs依赖注入的原理</h3><blockquote>
+</blockquote>
+<p>我们知道依赖注入是angualr的核心之一,我们通过注入服务的方式,达到不同功能之间的相互联系,<br>angualr当中有2种注入方式,一种是行内是注入,即我们帮注入的名称放到[]中</p>
+<blockquote>
+</blockquote>
+<p>例如 app.controller(‘控制器名称’,[$scope,funtion($scope){}]) </p>
+<blockquote>
+</blockquote>
+<p>另外一种是推断式注入 app.controller(‘控制器名称’,funtion($scope){}]) 不写[],直接跟<br>一个函数,它的缺点是很明显的,我们的项目都是需要经过压缩的,压缩会把一些形参转换成一些简单<br>的字母,这时候anular就不能通过形参的值来判断需要哪一个服务,就会报错,所以这种方式不建议使用..</p>
+<h3 id="rootScope-和-scope-区别"><a href="#rootScope-和-scope-区别" class="headerlink" title="$rootScope 和$scope 区别"></a>$rootScope 和$scope 区别</h3><blockquote>
+<p>它们的共同点都是作业域.只不过$rootScope是作为根作用域,$scope的作用域和原生js的作用域链<br>类似,都是由底层往上找,上面不能往下找,所以在$rootScope中定义的数据,在任何地方都能被使用,<br>它就是一个数的根节点, $scope就像它的分支,一层层的往下分,形成一个树状分支.</p>
+</blockquote>
+<h3 id="数据绑定出现闪烁处理"><a href="#数据绑定出现闪烁处理" class="headerlink" title="数据绑定出现闪烁处理"></a>数据绑定出现闪烁处理</h3><blockquote>
+<p>当我们使用插值语法进行数据绑定的时候,会出现闪烁.</p>
+</blockquote>
+<p>解决办法第一种是ng-bind的方法或者ng-bind-template 方法</p>
+<blockquote>
+</blockquote>
+<p>第二个是绑定一个类ng-cloak 添加 display:none的方法</p>
+<h3 id="angularjs-mvc和mvvm"><a href="#angularjs-mvc和mvvm" class="headerlink" title="angularjs mvc和mvvm"></a>angularjs mvc和mvvm</h3><blockquote>
+</blockquote>
+<p>简单的来说,angular是属于mvc和mvvm</p>
+<blockquote>
+</blockquote>
+<p>mvc指视 视图模型控制器</p>
+<blockquote>
+</blockquote>
+<p>mvvm值 数据的双向绑定</p>
+<h3 id="控制器之间的通讯"><a href="#控制器之间的通讯" class="headerlink" title="控制器之间的通讯"></a>控制器之间的通讯</h3><blockquote>
+<p>想要实现控制器的通讯,先清楚作用域之间的关系,父控制器想要传输数据到子控制器,通过<br>$scope.$broadcast 方法发送一个广播给子控制器,里面绑定一个通讯名称key 后面带上参数<br>子空控制器通过$scope.$on 方法接收 传入key名称和一个回调.</p>
+</blockquote>
+<p>如果是子向父传数据,通过$scope.$emit方法发送,父级也是通过 $scope.$on方法来接收数据<br>另外需要注意,一定要等指令加载完毕才去发送广播!</p>
+<h3 id="单页面应用的优缺点"><a href="#单页面应用的优缺点" class="headerlink" title="单页面应用的优缺点"></a>单页面应用的优缺点</h3><blockquote>
+<p>spa应用,优缺点还是很明显的优点是性能高,始终只有一个页面,不需要跳转页面,减轻了服务器的压力.让用户的体验更加好.</p>
+</blockquote>
+<p>缺点就是不利于seo,对搜索引擎不友好.另外就是没有新窗口的跳转,对应习惯新窗口的用户来说可能<br>造成不适应!!!</p>
+“”&gt;</xmg><br>   的插值语法获取值,该修饰符特点:外界数据修改,内部数据会一起修改,内部修改外部不修改,<br>   并且如果指令本身具有该属性,外界同名的属性会覆盖</p>
+<blockquote>
+<p>第二种:自定义名称:’=’ <xmg content="content"></xmg> 通过这中语法获取值<br>  该修饰符特点:外界数据和内部数据会互相更改,并且内部同名的属性会被外部同名的属性覆盖</p>
+<p>第三种 自定义名称:’&amp;’  <xmg content="content()"></xmg> 外界传入的是一个函数</p>
+</blockquote>
+<h3 id="angularjs常用的路由和它们之间的区别"><a href="#angularjs常用的路由和它们之间的区别" class="headerlink" title="angularjs常用的路由和它们之间的区别"></a>angularjs常用的路由和它们之间的区别</h3><blockquote>
+<p>angularjs当中常用路由是原生ngRoute 和 ui.router<br>并且ui.router是依赖angualr的</p>
+</blockquote>
+<p>它们的共同点都是用来进行设置单页面(spa)<br>不同的是,原生angular的路由只支持单视图展示,也就是说视图与视图不能嵌套,用法上受到很大的限制.</p>
+<blockquote>
+</blockquote>
+<p>而ui.router方法弥补了原生路由的不足,它不仅可以设置多视图的展示,还可以设置子路由的概念,<br>就是同一个页面存在多个路由</p>
+<h3 id="angularjs依赖注入的原理"><a href="#angularjs依赖注入的原理" class="headerlink" title="angularjs依赖注入的原理"></a>angularjs依赖注入的原理</h3><blockquote>
+</blockquote>
+<p>我们知道依赖注入是angualr的核心之一,我们通过注入服务的方式,达到不同功能之间的相互联系,<br>angualr当中有2种注入方式,一种是行内是注入,即我们帮注入的名称放到[]中</p>
+<blockquote>
+</blockquote>
+<p>例如 app.controller(‘控制器名称’,[$scope,funtion($scope){}]) </p>
+<blockquote>
+</blockquote>
+<p>另外一种是推断式注入 app.controller(‘控制器名称’,funtion($scope){}]) 不写[],直接跟<br>一个函数,它的缺点是很明显的,我们的项目都是需要经过压缩的,压缩会把一些形参转换成一些简单<br>的字母,这时候anular就不能通过形参的值来判断需要哪一个服务,就会报错,所以这种方式不建议使用..</p>
+<h3 id="rootScope-和-scope-区别"><a href="#rootScope-和-scope-区别" class="headerlink" title="$rootScope 和$scope 区别"></a>$rootScope 和$scope 区别</h3><blockquote>
+<p>它们的共同点都是作业域.只不过$rootScope是作为根作用域,$scope的作用域和原生js的作用域链<br>类似,都是由底层往上找,上面不能往下找,所以在$rootScope中定义的数据,在任何地方都能被使用,<br>它就是一个数的根节点, $scope就像它的分支,一层层的往下分,形成一个树状分支.</p>
+</blockquote>
+<h3 id="数据绑定出现闪烁处理"><a href="#数据绑定出现闪烁处理" class="headerlink" title="数据绑定出现闪烁处理"></a>数据绑定出现闪烁处理</h3><blockquote>
+<p>当我们使用插值语法进行数据绑定的时候,会出现闪烁.</p>
+</blockquote>
+<p>解决办法第一种是ng-bind的方法或者ng-bind-template 方法</p>
+<blockquote>
+</blockquote>
+<p>第二个是绑定一个类ng-cloak 添加 display:none的方法</p>
+<h3 id="angularjs-mvc和mvvm"><a href="#angularjs-mvc和mvvm" class="headerlink" title="angularjs mvc和mvvm"></a>angularjs mvc和mvvm</h3><blockquote>
+</blockquote>
+<p>简单的来说,angular是属于mvc和mvvm</p>
+<blockquote>
+</blockquote>
+<p>mvc指视 视图模型控制器</p>
+<blockquote>
+</blockquote>
+<p>mvvm值 数据的双向绑定</p>
+<h3 id="控制器之间的通讯"><a href="#控制器之间的通讯" class="headerlink" title="控制器之间的通讯"></a>控制器之间的通讯</h3><blockquote>
+<p>想要实现控制器的通讯,先清楚作用域之间的关系,父控制器想要传输数据到子控制器,通过<br>$scope.$broadcast 方法发送一个广播给子控制器,里面绑定一个通讯名称key 后面带上参数<br>子空控制器通过$scope.$on 方法接收 传入key名称和一个回调.</p>
+</blockquote>
+<p>如果是子向父传数据,通过$scope.$emit方法发送,父级也是通过 $scope.$on方法来接收数据<br>另外需要注意,一定要等指令加载完毕才去发送广播!</p>
+<h3 id="单页面应用的优缺点"><a href="#单页面应用的优缺点" class="headerlink" title="单页面应用的优缺点"></a>单页面应用的优缺点</h3><blockquote>
+<p>spa应用,优缺点还是很明显的优点是性能高,始终只有一个页面,不需要跳转页面,减轻了服务器的压力.让用户的体验更加好.</p>
+</blockquote>
+<p>缺点就是不利于seo,对搜索引擎不友好.另外就是没有新窗口的跳转,对应习惯新窗口的用户来说可能<br>造成不适应!!!</p>
+
+            <!-- <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2020年04月08日 22:52</p>
+        <p>原始链接： <a class="post-url" href="/2018/03/21/Angular%E5%B0%8F%E6%80%BB%E7%BB%93/" title="AngularJs小总结">https://ccdeccdecc.github.io/2018/03/21/Angular%E5%B0%8F%E6%80%BB%E7%BB%93/</a></p>
+        <footer>
+            <a href="https://ccdeccdecc.github.io">
+                <img src="/images/logo.png" alt="JuneAme">
+                JuneAme
+            </a>
+        </footer>
+    </div>
+</div> -->
+
+      
+        
+            
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://ccdeccdecc.github.io/2018/03/21/Angular%E5%B0%8F%E6%80%BB%E7%BB%93/&title=《AngularJs小总结》 — JuneAme的博客&pic=/images/icon1.jpg" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ccdeccdecc.github.io/2018/03/21/Angular%E5%B0%8F%E6%80%BB%E7%BB%93/&title=《AngularJs小总结》 — JuneAme的博客&source=专注 WEB 开发的技术博客" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://ccdeccdecc.github.io/2018/03/21/Angular%E5%B0%8F%E6%80%BB%E7%BB%93/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《AngularJs小总结》 — JuneAme的博客&url=https://ccdeccdecc.github.io/2018/03/21/Angular%E5%B0%8F%E6%80%BB%E7%BB%93/&via=https://ccdeccdecc.github.io" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://ccdeccdecc.github.io/2018/03/21/Angular%E5%B0%8F%E6%80%BB%E7%BB%93/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://ccdeccdecc.github.io/2018/03/21/Angular%E5%B0%8F%E6%80%BB%E7%BB%93/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#写在文章前的小记"><span class="post-toc-text">写在文章前的小记</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#AngularJs的优点"><span class="post-toc-text">AngularJs的优点</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#AngularJs的缺点"><span class="post-toc-text">AngularJs的缺点</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ng-if-ng-show-ng-hide-区别"><span class="post-toc-text">ng-if ,ng-show ,ng-hide 区别</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ng-repeat迭代数据出现数据相同处理"><span class="post-toc-text">ng-repeat迭代数据出现数据相同处理</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ng-事件绑定-能否使用原生js对象方法"><span class="post-toc-text">ng-事件绑定,能否使用原生js对象方法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#factory、service-和-provider-区别"><span class="post-toc-text">factory、service 和 provider 区别</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#angularjs当中数据绑定的机制和原理-digest-apply"><span class="post-toc-text">angularjs当中数据绑定的机制和原理 $digest $apply</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#定时器的取消和-watch的停止"><span class="post-toc-text">定时器的取消和$watch的停止</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#angualr中指令以及里面的常用方法"><span class="post-toc-text">angualr中指令以及里面的常用方法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#写在文章前的小记"><span class="post-toc-text">写在文章前的小记</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#AngularJs的优点"><span class="post-toc-text">AngularJs的优点</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#AngularJs的缺点"><span class="post-toc-text">AngularJs的缺点</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ng-if-ng-show-ng-hide-区别"><span class="post-toc-text">ng-if ,ng-show ,ng-hide 区别</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ng-repeat迭代数据出现数据相同处理"><span class="post-toc-text">ng-repeat迭代数据出现数据相同处理</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ng-事件绑定-能否使用原生js对象方法"><span class="post-toc-text">ng-事件绑定,能否使用原生js对象方法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#factory、service-和-provider-区别"><span class="post-toc-text">factory、service 和 provider 区别</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#angularjs当中数据绑定的机制和原理-digest-apply"><span class="post-toc-text">angularjs当中数据绑定的机制和原理 $digest $apply</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#定时器的取消和-watch的停止"><span class="post-toc-text">定时器的取消和$watch的停止</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#angualr中指令以及里面的常用方法"><span class="post-toc-text">angualr中指令以及里面的常用方法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#angularjs常用的路由和它们之间的区别"><span class="post-toc-text">angularjs常用的路由和它们之间的区别</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#angularjs依赖注入的原理"><span class="post-toc-text">angularjs依赖注入的原理</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#rootScope-和-scope-区别"><span class="post-toc-text">$rootScope 和$scope 区别</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#数据绑定出现闪烁处理"><span class="post-toc-text">数据绑定出现闪烁处理</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#angularjs-mvc和mvvm"><span class="post-toc-text">angularjs mvc和mvvm</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#控制器之间的通讯"><span class="post-toc-text">控制器之间的通讯</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#单页面应用的优缺点"><span class="post-toc-text">单页面应用的优缺点</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#angularjs常用的路由和它们之间的区别"><span class="post-toc-text">angularjs常用的路由和它们之间的区别</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#angularjs依赖注入的原理"><span class="post-toc-text">angularjs依赖注入的原理</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#rootScope-和-scope-区别"><span class="post-toc-text">$rootScope 和$scope 区别</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#数据绑定出现闪烁处理"><span class="post-toc-text">数据绑定出现闪烁处理</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#angularjs-mvc和mvvm"><span class="post-toc-text">angularjs mvc和mvvm</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#控制器之间的通讯"><span class="post-toc-text">控制器之间的通讯</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#单页面应用的优缺点"><span class="post-toc-text">单页面应用的优缺点</span></a></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+  
+    <a href="/2017/12/16/vue%E8%B7%AF%E7%94%B1%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%97%85/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">vue路由学习之旅</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2020 JuneAme<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "https://ccdeccdecc.github.io",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 0
+  }
+</script>
+<div class="sidebar">
+    <!-- <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div> -->
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            
+        </div>
+        <div id="sidebar-menu-box-tags">
+            
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>主页</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+
+<script src="/js/search.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  
+<script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+
+  
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  
+<script src="/js/animate.js"></script>
+
+
+
+  
+<script src="/js/pop-img.js"></script>
+
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>
