@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>网页布局之布局技巧 | JuneAme的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="前端,JuneAme,javascript" />
+  
+  <meta name="description" content="网页布局之布局技巧">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网页布局之布局技巧">
+<meta property="og:url" content="https://ccdeccdecc.github.io/2016/11/15/%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80%E4%B9%8B%E5%B8%83%E5%B1%80%E6%8A%80%E5%B7%A7/index.html">
+<meta property="og:site_name" content="JuneAme的博客">
+<meta property="og:description" content="网页布局之布局技巧">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2016-11-14T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-04-08T13:25:43.162Z">
+<meta property="article:author" content="JuneAme">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="JuneAme">
+<meta property="article:tag" content="javascript">
+<meta name="twitter:card" content="summary">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<script src="/js/pace.min.js"></script>
+
+  
+
+  
+  
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">JuneAme的博客</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>主页</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        JuneAme的博客
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        一个专注 WEB 开发的技术博客
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-网页布局之布局技巧" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      网页布局之布局技巧
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2016-11-15
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h4 id="css布局技巧"><a href="#css布局技巧" class="headerlink" title="css布局技巧"></a>css布局技巧</h4><p>一个常用布局技巧,虽然现在都有框架布局,但是放到自己博客方便自己学习,原文地址<a href="https://segmentfault.com/a/1190000003931851" target="_blank" rel="noopener">https://segmentfault.com/a/1190000003931851</a></p>
+<h3 id="水平居中"><a href="#水平居中" class="headerlink" title="水平居中"></a>水平居中</h3><p>水平居中的页面布局中最为常见的一种布局形式，多出现于标题，以及内容区域的组织形式，下面介绍四种实现水平居中的方法（注：下面各个实例中实现的是child元素的对齐操作，child元素的父容器是parent元素）</p>
+<p>使用inline-block 和 text-align实现</p>
+<pre><code>.parent{text-align    : center;}
+.child{display: inline-block;}
+优点：兼容性好；不足：需要同时设置子元素和父元素</code></pre><p>使用margin:0 auto来实现</p>
+<pre><code>.child{width: 200px; m    argin: 0 auto;}
+优点：兼容性好缺点: 需要指定宽度</code></pre><p>使用table实现</p>
+<pre><code>.child{disp    lay: table; margin: 0 auto;}
+优点:只需要对自身进行设置不足:IE6,7需要调整结构</code></pre><p>使用绝对定位实现</p>
+<pre><code>.parent{position:    relative;}
+/*或者实用margin-left的负值为盒子宽度的一半也可以实现，不过这样就必须知道盒子的宽度，但兼容性好*/
+.child{position:absolute; left:50%; transform:translate(-50%);}
+不足：兼容性差,IE9及以上可用</code></pre><p>实用flex布局实现</p>
+<pre><code>/*第一种方法    */
+.parent{display:flex; justify-content:center;}
+/*第二种方法*/
+.parent{display:flex;}
+.child{margin:0 auto;}
+缺点：兼容性差，如果进行大面积的布局可能会影响效率</code></pre><h3 id="垂直居中"><a href="#垂直居中" class="headerlink" title="垂直居中"></a>垂直居中</h3><p>vertical-align</p>
+<pre><code>/*第一种方    法*/
+.parent{display:table-cell;vertical-align:middle;height:20px;}
+/*第二种方法*/
+.parent{display:inline-block;vertical-align:middle;line-height:20px;}</code></pre><p>实用绝对定位</p>
+<pre><code>.parent{position    :relative;}
+.child{positon:absolute; top:50%; transform:translate(0,-50%);}</code></pre><p>实用flex实现</p>
+<pre><code>.parent{display:flex; align-items:center;}</code></pre><h3 id="水平垂直全部居中"><a href="#水平垂直全部居中" class="headerlink" title="水平垂直全部居中"></a>水平垂直全部居中</h3><p>利用vertical-align,text-align,inline-block实现</p>
+<pre><code>.parent{display:table-cell; vertical-ali    gn:middle; text-align:center;}
+.child{display:inline-block;}</code></pre><p>利用绝对定位实现</p>
+<pre><code>.parent{position:relative    ;}
+.child{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);}</code></pre><p>利用flex实现</p>
+<pre><code>.parent{display:flex;justify-content:center;align-items:center;}</code></pre><h3 id="左列定宽，右列自适应-其他演变原理基本一样"><a href="#左列定宽，右列自适应-其他演变原理基本一样" class="headerlink" title="左列定宽，右列自适应(其他演变原理基本一样)"></a>左列定宽，右列自适应(其他演变原理基本一样)</h3><p>该布局方式非常常见，适用于定宽的一侧常为导航，自适应的一侧为内容的布局<br>利用float+margin实现</p>
+<pre><code>.left{float:left;width:100    px;}
+.right{margin-left:100px;}</code></pre><p>利用float+margin(fix)实现</p>
+<pre><code>&lt;div class=&quot;parent&quot;&gt;
+    &lt;div class=&quot;left&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;right-fix&quot;&gt;
+        &lt;div class=&quot;right&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;    
+&lt;/div&gt;
+.left{width:100px;float:left;}
+.right-fix{width:100%;margin-left:-100px;float:right;}
+.right{margin-left:100px;}</code></pre><p>使用float+overflow实现</p>
+<pre><code>.left{width:100px;float:left;}
+.right{overflow:hidden;}</code></pre><p>使用table实现</p>
+<pre><code>.parent{display:table;table-layout:fixed;width:100%;}
+.left{width:100px;}
+.right,.left{display:table-cell;}</code></pre><p>实用flex实现</p>
+<pre><code>.parent{display:flex;}
+.left{width:100px;}
+.right{flex:1;}</code></pre><h3 id="多列等分布局"><a href="#多列等分布局" class="headerlink" title="多列等分布局"></a>多列等分布局</h3><p>实用float实现</p>
+<pre><code>&lt;div class=&quot;parent&quot;&gt;
+    &lt;div class=&quot;column&quot;&gt;1&lt;/div&gt;
+    &lt;div class=&quot;column&quot;&gt;1&lt;/div&gt;
+    &lt;div class=&quot;column&quot;&gt;1&lt;/div&gt;
+    &lt;div class=&quot;column&quot;&gt;1&lt;/div&gt;
+&lt;/div&gt;
+.parent{margin-left:-20px}/*假设列之间的间距为20px*/
+.column{float:left;width:25%;padding-left:20px;box-sizing:border-box;}</code></pre><p>利用table实现</p>
+<pre><code>.parent-fix{margin-left:-20px;}
+.parent{display:table;table-layout:fixed;width:100%;}
+.column{display:table-cell;padding-left:20px;}</code></pre><h3 id="九宫格布局"><a href="#九宫格布局" class="headerlink" title="九宫格布局"></a>九宫格布局</h3><p>使用table实现</p>
+<pre><code>&lt;div class=&quot;parent&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;&lt;div class=&quot;item&quot;&gt;&lt;/div&gt;&lt;div class=&quot;item&quot;&gt;&lt;/div&gt;&lt;div class=&quot;item&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+    &lt;div class=&quot;row&quot;&gt;&lt;div class=&quot;item&quot;&gt;&lt;/div&gt;&lt;div class=&quot;item&quot;&gt;&lt;/div&gt;&lt;div class=&quot;item&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+    &lt;div class=&quot;row&quot;&gt;&lt;div class=&quot;item&quot;&gt;&lt;/div&gt;&lt;div class=&quot;item&quot;&gt;&lt;/div&gt;&lt;div class=&quot;item&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+.parent{display:table;table-layout:fixed;width:100%;}
+.row{display:table-row;}
+.item{display:table-cell;width:33.3%;height:200px;}</code></pre><p>实用flex实现</p>
+<pre><code>&lt;div class=&quot;parent&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;&lt;div class=&quot;item&quot;&gt;&lt;/div&gt;&lt;div class=&quot;item&quot;&gt;&lt;/div&gt;&lt;div class=&quot;item&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+    &lt;div class=&quot;row&quot;&gt;&lt;div class=&quot;item&quot;&gt;&lt;/div&gt;&lt;div class=&quot;item&quot;&gt;&lt;/div&gt;&lt;div class=&quot;item&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+    &lt;div class=&quot;row&quot;&gt;&lt;div class=&quot;item&quot;&gt;&lt;/div&gt;&lt;div class=&quot;item&quot;&gt;&lt;/div&gt;&lt;div class=&quot;item&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+.parent{display:flex;flex-direction:column;}
+.row{height:100px;display:flex;}
+.item{width:100px;background:red;}</code></pre><h3 id="全屏布局"><a href="#全屏布局" class="headerlink" title="全屏布局"></a>全屏布局</h3><p>利用绝对定位实现</p>
+<pre><code>&lt;div class=&quot;parent&quot;&gt;
+    &lt;div class=&quot;top&quot;&gt;top&lt;/div&gt;
+    &lt;div class=&quot;left&quot;&gt;left&lt;/div&gt;
+    &lt;div class=&quot;right&quot;&gt;right&lt;/div&gt;
+    &lt;div class=&quot;bottom&quot;&gt;bottom&lt;/div&gt;
+&lt;/div&gt;
+html,body,parent{height:100%;overflow:hidden;}
+.top{position:absolute:top:0;left:0;right:0;height:100px;}
+.left{position:absolute;top:100px;left:0;bottom:50px;width:200px;}
+.right{position:absolute;overflow:auto;left:200px;right:0;top:100px;bottom:50px;}
+.bottom{position:absolute;left:0;right:0;bottom:0;height:50px;}</code></pre><p>利用flex实现</p>
+<pre><code>&lt;div class=&quot;parent&quot;&gt;
+    &lt;div class=&quot;top&quot;&gt;top&lt;/div&gt;
+    &lt;div class=&quot;middle&quot;&gt;
+        &lt;div class=&quot;left&quot;&gt;left&lt;/div&gt;
+        &lt;div class=&quot;right&quot;&gt;right&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;bottom&quot;&gt;bottom&lt;/div&gt;
+&lt;/div&gt;
+.parent{display:flex;flex-direction:column;}
+.top{height:100px;}
+.bottom{height:50px;}
+.middle{flex:1;display:flex;}
+.left{width:200px;}
+.right{flex:1;overflow:auto;}</code></pre><h3 id="响应式布局"><a href="#响应式布局" class="headerlink" title="响应式布局"></a>响应式布局</h3><p>meta标签的实用<br>设置布局宽度等于设备宽度，布局viewport等于度量viewport</p>
+<pre><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;&gt;</code></pre><h3 id="媒体查询"><a href="#媒体查询" class="headerlink" title="媒体查询"></a>媒体查询</h3><pre><code>@media screen and (max-width:960px){....}
+&lt;link rel=&quot;stylesheet&quot; media=&quot;screen and (max-width:960px)&quot; href=&apos;xxx.css&apos; /&gt;</code></pre>
+            <!-- <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2020年04月08日 21:25</p>
+        <p>原始链接： <a class="post-url" href="/2016/11/15/%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80%E4%B9%8B%E5%B8%83%E5%B1%80%E6%8A%80%E5%B7%A7/" title="网页布局之布局技巧">https://ccdeccdecc.github.io/2016/11/15/%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80%E4%B9%8B%E5%B8%83%E5%B1%80%E6%8A%80%E5%B7%A7/</a></p>
+        <footer>
+            <a href="https://ccdeccdecc.github.io">
+                <img src="/images/logo.png" alt="JuneAme">
+                JuneAme
+            </a>
+        </footer>
+    </div>
+</div> -->
+
+      
+        
+            
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://ccdeccdecc.github.io/2016/11/15/%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80%E4%B9%8B%E5%B8%83%E5%B1%80%E6%8A%80%E5%B7%A7/&title=《网页布局之布局技巧》 — JuneAme的博客&pic=/images/icon1.jpg" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ccdeccdecc.github.io/2016/11/15/%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80%E4%B9%8B%E5%B8%83%E5%B1%80%E6%8A%80%E5%B7%A7/&title=《网页布局之布局技巧》 — JuneAme的博客&source=专注 WEB 开发的技术博客" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://ccdeccdecc.github.io/2016/11/15/%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80%E4%B9%8B%E5%B8%83%E5%B1%80%E6%8A%80%E5%B7%A7/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《网页布局之布局技巧》 — JuneAme的博客&url=https://ccdeccdecc.github.io/2016/11/15/%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80%E4%B9%8B%E5%B8%83%E5%B1%80%E6%8A%80%E5%B7%A7/&via=https://ccdeccdecc.github.io" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://ccdeccdecc.github.io/2016/11/15/%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80%E4%B9%8B%E5%B8%83%E5%B1%80%E6%8A%80%E5%B7%A7/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://ccdeccdecc.github.io/2016/11/15/%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80%E4%B9%8B%E5%B8%83%E5%B1%80%E6%8A%80%E5%B7%A7/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#css布局技巧"><span class="post-toc-text">css布局技巧</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#水平居中"><span class="post-toc-text">水平居中</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#垂直居中"><span class="post-toc-text">垂直居中</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#水平垂直全部居中"><span class="post-toc-text">水平垂直全部居中</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#左列定宽，右列自适应-其他演变原理基本一样"><span class="post-toc-text">左列定宽，右列自适应(其他演变原理基本一样)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#多列等分布局"><span class="post-toc-text">多列等分布局</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#九宫格布局"><span class="post-toc-text">九宫格布局</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#全屏布局"><span class="post-toc-text">全屏布局</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#响应式布局"><span class="post-toc-text">响应式布局</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#媒体查询"><span class="post-toc-text">媒体查询</span></a>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2017/05/26/jquery%E6%8F%92%E4%BB%B6%E7%9A%84%E5%88%B6%E4%BD%9C%E6%96%B9%E6%B3%95/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          jquery插件的制作方法
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2016/07/17/%E8%A7%A3%E5%86%B3cell%E5%A4%8D%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">解决cell复用的问题</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2020 JuneAme<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "https://ccdeccdecc.github.io",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 0
+  }
+</script>
+<div class="sidebar">
+    <!-- <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div> -->
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            
+        </div>
+        <div id="sidebar-menu-box-tags">
+            
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>主页</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+
+<script src="/js/search.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  
+<script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+
+  
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  
+<script src="/js/animate.js"></script>
+
+
+
+  
+<script src="/js/pop-img.js"></script>
+
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>
